@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>RAAZ — Cloud Kitchen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Base styles -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- Grain texture overlay -->
+  <div class="grain-overlay"></div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <div class="nav-left">
+        <!-- Mobile Toggle (placeholder) -->
+      </div>
+
+      <a href="index.html" class="brand">RAAZ</a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Orders</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="signin.html">Sign In </a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+            
+</ul>
+<body>
+  <!-- QUOTE BOX -->
+    <div id="quote-box">
+      <p id="quote-text">Welcome to RAAZ</p>
+    </div>
+  </div>
+  <div class="nav-right">
+        <!-- Sticky Cart Icon / Action -->
+        <a  class="button-primary"
+          style="padding: 0.5rem 1.5rem; margin-top: 0; font-size: 0.8rem;">Order now</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+      <div class="container">
+        <div class="hero-content">
+          <h1>The quieter side of indulgence.</h1>
+          <p>
+            RAAZ exists between restraint and richness. <br>
+            Food that does not compete for attention.
+          </p>
+          <div class="hero-actions">
+            <a href="menu.html" class="button-primary">Order Now</a>
+            <a href="menu.html" class="button-outline" style="margin-left: 1rem;">Explore Menu</a>
+          </div>
+        </div>
+      </div>
+      <!-- Background Image handled in CSS or via inline style if dynamic -->
+      <div class="hero-bg"
+        style="position: absolute; inset: 0; z-index: -1; background: url('assets/images/combinationcooking.webp') center/cover no-repeat; filter: brightness(0.4);">
+      </div>
+    </section>
+    <section style="text-align:center; padding: 3rem 1rem;">
+      <!-- Signatures Carousel -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Signatures</h2>
+          <p>Dishes that define us.</p>
+        </div>
+
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+          <article class="food-card">
+            <div class="editorial-image" style="aspect-ratio: 4/5;">
+              <img src="assets/images/dish-1.jpg" alt="Slow Braised Mutton">
+            </div>
+            <h3>Slow Braised Mutton</h3>
+            <p>Deep. Patient. Unapologetically rich.</p>
+          </article>
+
+          <article class="food-card">
+            <div class="editorial-image" style="aspect-ratio: 4/5;">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXd85hRetX5PvE_DFNqOQiDYgR3gScURrScA&s" alt="Charcoal Paneer">
+            </div>
+            <h3>Charcoal Paneer</h3>
+            <p>Smoky restraint. Clean finish.</p>
+          </article>
+
+          <article class="food-card">
+            <div class="editorial-image" style="aspect-ratio: 4/5;">
+              <img src="assets/images/editorial-2.jpg" alt="Dal RAAZ">
+            </div>
+            <h3>Dal RAAZ</h3>
+            <p>Slow-cooked black lentils, finished with white butter.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why We're Different -->
+    <section class="section" style="background: var(--bg-card);">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Philosophy</h2>
+        </div>
+        <div class="card-grid">
+          <div>
+            <h3 style="font-family: var(--font-serif); margin-bottom: 0.5rem;">Cooked Slowly</h3>
+            <p style="color: var(--text-secondary);">Time is an ingredient we refuse to rush. Every preparation is
+              allowed to arrive naturally.</p>
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-serif); margin-bottom: 0.5rem;">Sourced Carefullly</h3>
+            <p style="color: var(--text-secondary);">We work with partners who respect the land. Ingredients that speak
+              for themselves.</p>
+          </div>
+          <div>
+            <h3 style="font-family: var(--font-serif); margin-bottom: 0.5rem;">Delivered Intact</h3>
+            <p style="color: var(--text-secondary);">Packaging designed to preserve the integrity of the dish from our
+              kitchen to your table.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof / Brand Story Teaser -->
+    <section class="section narrow text-center">
+      <div class="container">
+        <blockquote
+          style="font-family: var(--font-serif);
+           font-size: 1.5rem; 
+           font-style: italic; 
+           color: var(--text-primary); 
+           margin-bottom: 2rem;">
+          "A cloud kitchen that feels like a fine dining restaurant delivered to your door."
+        </blockquote>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">— The City Guide</p>
+
+        <a href="about.html" class="button-outline">Read Our Story</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2024 RAAZ Cloud Kitchen. All rights reserved.</p>
+      <div class="footer-links"
+        style="margin-top: 1rem; display: flex; gap: 1rem; justify-content: center; font-size: 0.8rem;">
+        <a href="#" style="color: var(--text-secondary); text-decoration: none;">Privacy</a>
+        <a href="#" style="color: var(--text-secondary); text-decoration: none;">Terms</a>
+        <a href="#" style="color: var(--text-secondary); text-decoration: none;">Instagram</a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <!-- JAVASCRIPT -->
+  <script>
+    const quotes = [
+      "Where silence meets flavor.",
+      "RAAZ is not just food, it's an experience.",
+      "Indulgence, redefined.",
+      "Crafted slowly. Served thoughtfully.",
+      "Every bite tells a story."
+    ];
+
+    let index = 0;
+
+    function changeQuote() {
+      const quoteEl = document.getElementById("quote-text");
+
+      quoteEl.style.opacity = 0;
+
+      setTimeout(() => {
+        index = (index + 1) % quotes.length;
+        quoteEl.textContent = quotes[index];
+        quoteEl.style.opacity = 1;
+      }, 300);
+    }
+
+    setInterval(changeQuote, 3000);
+  </script>
+
+</body>
+
+</html>
