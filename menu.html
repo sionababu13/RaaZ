@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Menu — RAAZ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Base styles -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="grain-overlay"></div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <div class="nav-left"></div>
+      <a href="index.html" class="brand">RAAZ</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="order.html">Orders</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: calc(var(--header-height) + 2rem);">
+      <div class="container">
+        <!-- Category Tabs -->
+        <div class="category-tabs"
+          style="display: flex; gap: 2rem; overflow-x: auto; padding-bottom: 1rem; border-bottom: 1px solid var(--border-subtle); margin-bottom: 2rem;">
+          <a href="#" class="active"
+            style="color: var(--accent); white-space: nowrap; text-decoration: none; font-family: var(--font-serif);">All</a>
+          <a href="#"
+            style="color: var(--text-secondary); white-space: nowrap; text-decoration: none; font-family: var(--font-serif);">Signatures</a>
+          <a href="#"
+            style="color: var(--text-secondary); white-space: nowrap; text-decoration: none; font-family: var(--font-serif);">Curries</a>
+          <a href="#"
+            style="color: var(--text-secondary); white-space: nowrap; text-decoration: none; font-family: var(--font-serif);">Breads</a>
+          <a href="#"
+            style="color: var(--text-secondary); white-space: nowrap; text-decoration: none; font-family: var(--font-serif);">Sides</a>
+          <a href="#" onclick="openCheckout()" class="button-primary">Cart (0)</a>
+          <button class="button-primary" onclick="openCheckout()">Pay</button>
+
+        </div>
+
+       <div class="category-tabs"
+        style="display: flex; gap: 2rem; overflow-x: auto; padding-bottom: 1rem; border-bottom: 1px solid var(--border-subtle); margin-bottom: 2rem;">
+
+        <a href="#" onclick="filterMenu('all',event)" class="button-primary">All</a>
+        <a href="#" onclick="filterMenu('veg',event)" class="button-primary">Veg</a>
+        <a href="#" onclick="filterMenu('nonveg',event)" class="button-primary">Non-Veg</a>
+      </div>
+
+        <div class="menu-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+          <!-- Menu Item 1 -->
+          <article class="food-card fade-in delay-1"data-category="nonveg" onclick="openDrawer('dish-1')">
+            <div class="editorial-image" style="aspect-ratio: 4/3; margin-bottom: 1rem;">
+              <img src="assets/images/dish-1.jpg" alt="Slow Braised Mutton">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+              <h3>Slow Braised Mutton</h3>
+              <span style="color: var(--accent); font-weight: 600;">₹420</span>
+            </div>
+            <p>Tender, slow-cooked mutton with rich spices</p>
+          </article>
+
+          <!-- Menu Item 2 -->
+          <article class="food-card fade-in delay-2"data-category="veg" onclick="openDrawer('dish-2')">
+            <div class="editorial-image" style="aspect-ratio: 4/3; margin-bottom: 1rem;">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXd85hRetX5PvE_DFNqOQiDYgR3gScURrScA&s" alt="Charcoal Paneer">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+              <h3>Charcoal Paneer</h3>
+              <span style="color: var(--accent); font-weight: 600;">₹350</span>
+            </div>
+            <p>Smoky grilled paneer with bold spices.</p>
+          </article>
+
+          <!-- Menu Item 3 -->
+          <article class="food-card fade-in delay-2" data-category="nonveg"onclick="openDrawer('dish-3')">
+            <div class="editorial-image" style="aspect-ratio: 4/3; margin-bottom: 1rem;">
+              <img src="https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg" alt="Chicken Biryani">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+              <h3>Chicken Biryani</h3>
+              <span style="color: var(--accent); font-weight: 600;">₹150</span>
+            </div>
+            <p>Aromatic rice with spicy chicken layers</p>
+
+          </article>
+
+          
+
+          <!-- Menu Item 4 -->
+          <article class="food-card fade-in delay-3"data-category="veg" onclick="openDrawer('dish-4')">
+            <div class="editorial-image" style="aspect-ratio: 4/3; margin-bottom: 1rem;">
+              <img src="assets/images/editorial-2.jpg" alt="Dal RAAZ">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+              <h3>Dal RAAZ</h3>
+              <span style="color: var(--accent); font-weight: 600;">₹280</span>
+            </div>
+            <p>Creamy dal infused with roasted garlic</p>
+          </article>
+
+
+          <!--menu 5-->
+          <article class="food-card fade-in delay-1"data-category="veg" onclick="openDrawer('dish-5')">
+            <div class="editorial-image" style="aspect-ratio: 4/3; margin-bottom: 1rem;">
+              <img src="https://cdn.mygingergarlickitchen.com/images/800px/800px-recipes-Restaurant-Style-Indian-Garlic-Naan-3-Ways-anupama-paliwal-my-ginger-garlic-kitchen-7.jpg" alt="Garlic Naan">
+           </div>
+           <div style="display: flex; justify-content: space-between; align-items: start;">
+               <h3>Garlic Naan</h3>
+             <span style="color: var(--accent); font-weight: 600;">₹80</span>
+           </div>
+           <p>Soft naan topped with buttery garlic.</p>
+          </article>
+
+          <!-- Menu Item 6 -->
+          <article class="food-card fade-in delay-3"data-category="veg" onclick="openDrawer('dish-6')">
+            <div class="editorial-image" style="aspect-ratio: 4/3; margin-bottom: 1rem;">
+              <img src="https://sixhungryfeet.com/wp-content/uploads/2023/02/Tawa-Pulao-Mumbai-Style-5.jpg" alt="Tawa Pulao">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+              <h3>Tawa Pulao </h3>
+              <span style="color: var(--accent); font-weight: 600;">₹280</span>
+            </div>
+            <p>Spicy street-style rice with fresh vegetables</p>
+          </article>
+
+          <!-- Menu Item 7 -->
+          <article class="food-card fade-in delay-3" data-category="nonveg" onclick="openDrawer('dish-7')">
+            <div class="editorial-image" style="aspect-ratio: 4/3; margin-bottom: 1rem;">
+              <img src="https://www.islandsmile.org/wp-content/uploads/2018/01/devil-chicken-2-2-960x686.webp" alt="Chilli Chicken">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+              <h3>Chilli Chicken</h3>
+              <span style="color: var(--accent); font-weight: 600;">₹200</span>
+            </div>
+            <p>Spicy Smoked Crispy Chicken Made with Schezwan sauce. Rich.</p>
+          </article>
+
+          <!-- Menu Item 8-->
+          <article class="food-card fade-in delay-3"data-category="nonveg" onclick="openDrawer('dish-8')">
+            <div class="editorial-image" style="aspect-ratio: 4/3; margin-bottom: 1rem;">
+              <img src="https://www.kannammacooks.com/wp-content/uploads/masala-fish-fry-recipe-ayala-meen-Mackerel-fry-8.jpg" alt="Fish Fry">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+              <h3>Fish Fry</h3>
+              <span style="color: var(--accent); font-weight: 600;">₹110</span>
+            </div>
+            <p>Spicy crispy fish with flavorful coating</p>
+          </article>
+
+          <!--Menu item 9-->
+          <article class="food-card fade-in delay-3"data-category="nonveg" onclick="openDrawer('dish-9')">
+            <div class="editorial-image" style="aspect-ratio: 4/3; margin-bottom: 1rem;">
+              <img src= 'https://flavorquotient.com/wp-content/uploads/2024/04/Chicken-Tikka-Kebab-FQ-4-3896.jpg' alt="Chicken Tikka">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+              <h3>Chicken Tikka</h3>
+              <span style="color: var(--accent); font-weight: 600;">₹160</span>
+            </div>
+            <p>Smoky grilled chicken with spicy marinade</p>
+          </article>
+          <!--menu item 10-->
+          <article class="food-card fade-in delay-3"data category="veg" onclick="openDrawer('dish-10')">
+            <div class="editorial-image" style="aspect-ratio: 4/3; margin-bottom: 1rem;">
+              <img src= 'https://foodmahal.in/wp-content/uploads/2024/10/Premium-Photo-_-Veg-Manchurian-Popular-indochinese-food-made-of-cauliflower-florets-and-other-vegetable-served-in-a-white-plate-over-a-rustic-wooden-table-selective-focus.jpeg' alt="Veg Manchurian">
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: start;">
+              <h3>Veg Manchurian</h3>
+              <span style="color: var(--accent); font-weight: 600;">₹160</span>
+            </div>
+            <p>Crispy vegetable balls in spicy tangy sauce</p>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Dish Detail Drawer (Hidden by default) -->
+  <div id="dish-drawer"
+    style="position: fixed; top: 0; right: -100%; width: 100%; max-width: 480px; height: 100vh; background: var(--bg-card); z-index: 200; transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1); border-left: 1px solid var(--border-subtle); display: flex; flex-direction: column;">
+    <div style="padding: 1rem; display: flex; justify-content: flex-end;">
+      <button onclick="closeDrawer()"
+        style="background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer;">&times;</button>
+    </div>
+    <div class="drawer-content" style="padding: 0 2rem 2rem; overflow-y: auto;">
+      <div id="drawer-image" class="editorial-image" style="aspect-ratio: 16/9; margin-bottom: 1.5rem;">
+        <img src="" alt="">
+      </div>
+      <h2 id="drawer-title" style="font-family: var(--font-serif); margin-bottom: 0.5rem;">Dish Name</h2>
+      <p id="drawer-price" style="color: var(--accent); font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem;">
+        ₹000</p>
+      <p id="drawer-desc" style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">Description goes
+        here.</p>
+
+      <button class="button-primary" style="width: 100%;" onclick="addToCart()">Add to Cart</button>
+
+    </div>
+  </div>
+  <!-- Checkout Drawer -->
+<div id="checkout-drawer"
+  style="position: fixed; top: 0; right: -100%; width: 100%; max-width: 480px; height: 100vh; background: var(--bg-card); z-index: 210; transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1); border-left: 1px solid var(--border-subtle); display: flex; flex-direction: column;">
+
+  <div style="padding: 1rem; display: flex; justify-content: space-between; align-items:center;">
+    <h3>Checkout</h3>
+    <button onclick="closeCheckout()" style="background: none; border: none; font-size: 1.5rem;">&times;</button>
+  </div>
+
+  <div style="padding: 0 2rem 2rem; overflow-y: auto;">
+
+    <h4>Billing Details</h4>
+    <input class="input" placeholder="Full Name">
+    <input class="input" placeholder="Phone Number">
+    <input class="input" placeholder="Address">
+    <input class="input" placeholder="City">
+
+    <h4 style="margin-top:1.5rem;">Payment Method</h4>
+
+    <label class="payment-option"><input type="radio" name="payment" checked> UPI</label>
+    <label class="payment-option"><input type="radio" name="payment"> Card</label>
+    <label class="payment-option"><input type="radio" name="payment"> Cash on Delivery</label>
+
+    <div id="card-fields" style="margin-top:1rem;">
+      <input class="input" placeholder="Card Number">
+      <input class="input" placeholder="Expiry">
+    </div>
+
+    <div style="display:flex; justify-content:space-between; margin-top:1.5rem; font-weight:600;">
+      <span>Total</span>
+      <span id="checkout-total">₹0</span>
+    </div>
+
+    <button class="button-primary" style="width:100%; margin-top:1rem;">Pay Now</button>
+
+  </div>
+</div>
+
+
+  <!-- Overlay for drawer -->
+  <div id="drawer-overlay" onclick="closeDrawer()"
+    style="position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 150; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;">
+  </div>
+
+  <script>
+/* ================= CART VARIABLES ================= */
+let cart = [];
+let cartTotal = 0;
+let currentDish = null;
+
+/* ================= DISH DATA ================= */
+const dishes = {
+  'dish-1': {
+    title: 'Slow Braised Mutton',
+    price: '₹420',
+    desc: 'A dish that demands patience. The mutton is Tender and Juicy Mutton slow-cooked to perfection in a blend of aromatic spices, creating a rich and flavorful experience.',
+    img: 'assets/images/dish-1.jpg'
+  },
+  'dish-2': {
+    title: 'Charcoal Paneer',
+    price: '₹350',
+    desc: 'Smoky and Flavorful Paneer grilled over charcoal with a blend of bold spices. Soft inside with a perfectly charred and crispy outer layer.',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXd85hRetX5PvE_DFNqOQiDYgR3gScURrScA&s'
+  },
+  'dish-3': {
+    title: 'Chicken Biryani',
+    price: '₹150',
+    desc: 'Fragrant and Spicy Chicken Biryani cooked with basmati rice and exotic spices. Rich taste with perfectly layered flavors in every bite.',
+    img: 'https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg'
+  },
+  'dish-4': {
+    title: 'Dal ',
+    price: '₹280',
+    desc: 'Creamy and Delicious Dal infused with roasted garlic and traditional spices. Comforting flavors with a rich and buttery texture.',
+    img: 'assets/images/editorial-2.jpg'
+
+  },
+  'dish-5': {
+    title: 'Garlic Naan',
+    price: '₹80',
+    desc: 'Soft and Fluffy Naan topped with aromatic garlic and butter. Perfectly baked for a light, flavorful, and slightly crispy bite.',
+    img: 'https://cdn.mygingergarlickitchen.com/images/800px/800px-recipes-Restaurant-Style-Indian-Garlic-Naan-3-Ways-anupama-paliwal-my-ginger-garlic-kitchen-7.jpg'
+  },
+  'dish-6': {
+    title: 'Tawa Pulao',
+    price: '₹280',
+    desc: 'Spicy and Tangy Pulao tossed on a hot tawa with fresh vegetables and pav bhaji masala. Bold street-style flavors in every bite.',
+    img: 'https://sixhungryfeet.com/wp-content/uploads/2023/02/Tawa-Pulao-Mumbai-Style-5.jpg'
+  },
+  'dish-7': {
+    title: 'Chilli Chicken',
+    price: '₹280',
+    desc: 'Spicy and Crispy Chicken tossed in a flavorful chilli sauce. Perfect balance of heat, crunch, and tangy goodness.',
+    img: 'https://www.islandsmile.org/wp-content/uploads/2018/01/devil-chicken-2-2-960x686.webp'
+  },
+  'dish-8': {
+    title: 'Fish Fry',
+    price: '₹110',
+    desc: 'Spicy and Crispy Fish fry made with delicious spices. Golden fried to perfection with a flavorful and crunchy coating.',
+    img: 'https://www.kannammacooks.com/wp-content/uploads/masala-fish-fry-recipe-ayala-meen-Mackerel-fry-8.jpg'
+  },
+  'dish-9': {
+    title: 'Chicken Tikka',
+    price: '₹160',
+    desc: 'Smoky and Tender Chicken Tikka marinated in a blend of spices and grilled to perfection. Juicy inside with a flavorful charred exterior.',
+    img: 'https://flavorquotient.com/wp-content/uploads/2024/04/Chicken-Tikka-Kebab-FQ-4-3896.jpg'
+
+},
+'dish-10': {
+    title: 'Veg Manchurian',
+    price: '₹160',
+    desc: 'Crispy vegetable balls tossed in a spicy and tangy Manchurian sauce. A perfect Indo-Chinese fusion dish bursting with flavor.',
+    img: 'https://foodmahal.in/wp-content/uploads/2024/10/Premium-Photo-_-Veg-Manchurian-Popular-indochinese-food-made-of-cauliflower-florets-and-other-vegetable-served-in-a-white-plate-over-a-rustic-wooden-table-selective-focus.jpeg'
+}
+}
+
+;
+
+/* ================= OPEN DISH DRAWER ================= */
+function openDrawer(id) {
+  const dish = dishes[id];
+  if (!dish) return;
+
+  currentDish = dish;
+
+  document.getElementById('drawer-title').innerText = dish.title;
+  document.getElementById('drawer-price').innerText = dish.price;
+  document.getElementById('drawer-desc').innerText = dish.desc;
+  document.getElementById('drawer-image').querySelector('img').src = dish.img;
+
+  document.getElementById('dish-drawer').style.right = '0';
+
+  const overlay = document.getElementById('drawer-overlay');
+  overlay.style.pointerEvents = 'auto';
+  overlay.style.opacity = '1';
+}
+
+/* ================= CLOSE DISH DRAWER ================= */
+function closeDrawer() {
+  document.getElementById('dish-drawer').style.right = '-100%';
+
+  const overlay = document.getElementById('drawer-overlay');
+  overlay.style.pointerEvents = 'none';
+  overlay.style.opacity = '0';
+}
+
+/* ================= ADD TO CART ================= */
+function addToCart() {
+  if (!currentDish) return;
+
+  cart.push(currentDish);
+
+  const price = parseInt(currentDish.price.replace('₹', ''));
+  cartTotal += price;
+
+  document.getElementById('checkout-total').innerText = '₹' + cartTotal;
+
+  /* update cart count text */
+document.querySelector('.category-tabs a.button-primary').innerText = `Cart (${cart.length})`;
+
+  alert(currentDish.title + " added to cart ✅");
+
+  closeDrawer();
+}
+
+/* ================= CHECKOUT ================= */
+function openCheckout() {
+  document.getElementById('checkout-drawer').style.right = '0';
+
+  const overlay = document.getElementById('drawer-overlay');
+  overlay.style.pointerEvents = 'auto';
+  overlay.style.opacity = '1';
+}
+
+function closeCheckout() {
+  document.getElementById('checkout-drawer').style.right = '-100%';
+
+  const overlay = document.getElementById('drawer-overlay');
+  overlay.style.pointerEvents = 'none';
+  overlay.style.opacity = '0';
+}
+
+
+/* ================= FILTER MENU ================= */
+function filterMenu(category, event) {
+  const items = document.querySelectorAll('.food-card');
+
+  items.forEach(item => {
+    if (category === 'all' || item.dataset.category === category) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+
+  document.querySelectorAll('.category-tabs .button-primary').forEach(tab => {
+    tab.classList.remove('active');
+  });
+
+  event.target.classList.add('active');
+}
+
+</script>
+</body>
+
+</html>
